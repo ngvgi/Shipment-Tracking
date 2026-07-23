@@ -40,9 +40,7 @@ export default function DelayedAlerts({ shipments }) {
           flaggedShipments.map((shipment) => (
             <div key={shipment.id} className={styles.alertItem}>
               <div className={styles.alertLeft}>
-                <div
-                  style={{ display: "flex", alignItems: "center", gap: "8px" }}
-                >
+                <div className={styles.alertHeader}>
                   <span className={styles.alertTitle}>
                     {shipment.buyerName}
                   </span>
