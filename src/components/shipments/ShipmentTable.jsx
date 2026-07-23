@@ -26,6 +26,7 @@ export default function ShipmentTable() {
 
   return (
     <div className={styles.tableCard}>
+      {/* DESKTOP VIEW: MASTER DATA TABLE */}
       <table className={styles.table}>
         <thead>
           <tr>
@@ -85,6 +86,54 @@ export default function ShipmentTable() {
           )}
         </tbody>
       </table>
+
+      {/* MOBILE VIEW: TOUCH CARD STREAM */}
+      <div className={styles.mobileCardStream}>
+        {filteredItems.length === 0 ? (
+          <div className={styles.noResultsMobile}>
+            No shipments found matching the selected filters.
+          </div>
+        ) : (
+          filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className={styles.mobileShipmentCard}
+              onClick={() => dispatch(setSelectedShipmentId(item.id))}
+            >
+              <div className={styles.mobileCardHeader}>
+                <div className={styles.buyerCell}>
+                  <span className={styles.buyerName}>{item.buyerName}</span>
+                  <span className={styles.buyerEmail}>{item.contactEmail}</span>
+                </div>
+                <span className={styles.waybillText}>{item.waybill}</span>
+              </div>
+
+              <div className={styles.mobileCardBody}>
+                <div className={styles.mobileDetailRow}>
+                  <span className={styles.mobileDetailLabel}>Coffee:</span>
+                  <span className={styles.mobileDetailValue}>
+                    {item.coffeeType} ({item.weightKg}kg)
+                  </span>
+                </div>
+                <div className={styles.mobileDetailRow}>
+                  <span className={styles.mobileDetailLabel}>Region:</span>
+                  <span className={styles.mobileDetailValue}>
+                    {item.country} ({item.region})
+                  </span>
+                </div>
+              </div>
+
+              <div className={styles.mobileCardFooter}>
+                <div className={styles.statusBadgeGroup}>
+                  <Badge status={item.dhlStatus} />
+                  <Badge status={item.buyerStatus} />
+                </div>
+                <span className={styles.tapIndicator}>Details →</span>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }

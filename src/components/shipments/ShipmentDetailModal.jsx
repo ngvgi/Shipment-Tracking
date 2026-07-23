@@ -100,7 +100,7 @@ export default function ShipmentDetailModal() {
           {/* DHL Tracking Timeline */}
           <div>
             <h4 className={styles.sectionTitle}>
-              ✈️ DHL Express Tracking Timeline
+              DHL Express Tracking Timeline
             </h4>
             <div className={styles.timeline}>
               {shipment.dhlTimeline.map((event, idx) => (
@@ -117,9 +117,7 @@ export default function ShipmentDetailModal() {
 
           {/* Email activity log */}
           <div>
-            <h4 className={styles.sectionTitle}>
-              ✉️ Email Activity & Sync Logs
-            </h4>
+            <h4 className={styles.sectionTitle}>Email Activity & Sync Logs</h4>
             <div className={styles.emailList}>
               {shipment.emailLogs.map((log, idx) => (
                 <div key={idx} className={styles.emailCard}>

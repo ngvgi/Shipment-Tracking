@@ -110,3 +110,51 @@
 .active:hover {
   color: var(--color-text-inverse);
 }
+
+/* ==========================================
+   📱 MOBILE NAVBAR RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .brandSubtitle {
+    display: none; /* Hide subtitle on small screens to save vertical space */
+  }
+
+  .brandTitle {
+    font-size: 1.05rem;
+  }
+
+  .logoIcon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+  }
+
+  .rightActions {
+    gap: 8px;
+  }
+
+  .nav {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .navButton {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandTitle {
+    display: none; /* Icon-only branding on micro viewports */
+  }
+}

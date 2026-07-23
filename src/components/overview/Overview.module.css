@@ -25,7 +25,7 @@
   color: var(--color-text-muted);
 }
 
-/* KPI Grid Layout */
+/* KPI Grid Layout (Desktop Default) */
 .kpiGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -160,12 +160,6 @@
   min-height: 0;
 }
 
-@media (max-width: 900px) {
-  .contentGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .sectionCard {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -291,4 +285,59 @@
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   border-color: var(--color-primary);
+}
+
+/* ==========================================
+   📱 MOBILE & TABLET BENTO RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 900px) {
+  .container {
+    overflow-y: auto; /* Release fixed viewport height for smooth scrolling */
+    padding: 20px 16px;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    flex: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Classy Mobile Bento Box Grid Layout */
+  .kpiGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2-Column Bento System */
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  /* Bento Tile 1: Hero Card spans full width */
+  .kpiGrid > *:nth-child(1) {
+    grid-column: span 2;
+    background: linear-gradient(
+      135deg,
+      var(--color-surface) 0%,
+      var(--color-bg) 100%
+    );
+    padding: 20px;
+  }
+
+  /* Bento Tiles 2 & 3: Compact Side-by-Side Tiles */
+  .kpiGrid > *:nth-child(2),
+  .kpiGrid > *:nth-child(3) {
+    grid-column: span 1;
+    padding: 16px;
+  }
+
+  .kpiGrid > *:nth-child(2) .kpiValue,
+  .kpiGrid > *:nth-child(3) .kpiValue {
+    font-size: 1.6rem;
+  }
+
+  /* Bento Tile 4: Action Card spans full width */
+  .kpiGrid > *:nth-child(4) {
+    grid-column: span 2;
+    padding: 18px 20px;
+  }
 }
