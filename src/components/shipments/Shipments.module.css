@@ -21,7 +21,6 @@
 .pageDescription {
   font-size: 0.875rem;
   color: var(--color-text-muted);
-  margin-top: 4px;
 }
 
 /* Toolbar & Filters */
@@ -47,6 +46,7 @@
 
 .searchInput:focus {
   border-color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .filterGroup {

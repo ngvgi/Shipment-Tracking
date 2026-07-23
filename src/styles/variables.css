@@ -19,7 +19,7 @@
   --color-success-bg: #dcfce7;
   --color-warning: #b45309;
   --color-warning-bg: #fef3c7;
-  --color-danger: #b91c1c;
+  --color-danger: #ff0000;
   --color-danger-bg: #fee2e2;
   --color-info: #0369a1;
   --color-info-bg: #e0f2fe;
@@ -37,4 +37,37 @@
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
+}
+
+/* Dark Roasted Theme Equivalent */
+[data-theme="dark"] {
+  /* Coffee & Espresso Palette */
+  --color-primary: #f5e6d3; /* Warm Roasted Cream */
+  --color-primary-hover: #e0ceb7;
+  --color-accent: #d9936a; /* Bright Copper Roast */
+  --color-accent-light: #2a1f1b;
+
+  /* Dark Surface & Slate Palette */
+  --color-bg: #12100f; /* Very Dark Roasted Bean Base */
+  --color-surface: #1a1715; /* Elevated Surface */
+  --color-surface-hover: #26221f;
+  --color-border: #2e2824;
+  --color-text-main: #f3efe6;
+  --color-text-muted: #a19891;
+  --color-text-inverse: #12100f;
+
+  /* Dark Mode Status Badges (Subtle muted backgrounds with bright text) */
+  --color-success: #4ade80;
+  --color-success-bg: #14321d;
+  --color-warning: #fbbf24;
+  --color-warning-bg: #38240b;
+  --color-danger: #f87171;
+  --color-danger-bg: #381616;
+  --color-info: #38bdf8;
+  --color-info-bg: #0c2838;
+
+  /* Elevation Shadows for Dark Surfaces */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 20px -3px rgba(0, 0, 0, 0.6);
 }

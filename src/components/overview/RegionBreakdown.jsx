@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./Overview.module.css";
 
-export default function RegionBreakdown({ shipments }) {
-  // Aggregate stats per region dynamically from shipments
+const RegionBreakdown = ({ shipments }) => {
   const regionStats = shipments.reduce((acc, curr) => {
     const reg = curr.region || "Other";
     if (!acc[reg]) {
@@ -56,4 +55,6 @@ export default function RegionBreakdown({ shipments }) {
       </div>
     </div>
   );
-}
+};
+
+export default RegionBreakdown;
