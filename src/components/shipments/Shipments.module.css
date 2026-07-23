@@ -1,0 +1,322 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.headerSection {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.pageDescription {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* Toolbar & Filters */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-size: 0.875rem;
+  width: 320px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.searchInput:focus {
+  border-color: var(--color-accent);
+}
+
+.filterGroup {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Table Card Wrapper */
+.tableCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  background-color: var(--color-bg);
+  padding: 14px 18px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table td {
+  padding: 16px 18px;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr {
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.table tr:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.buyerCell {
+  display: flex;
+  flex-direction: column;
+}
+
+.buyerName {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.buyerEmail {
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+}
+
+.waybillText {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 0.825rem;
+  color: var(--color-accent);
+}
+
+/* Modal Drawer Overlay */
+.drawerBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(28, 25, 23, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: 100%;
+  max-width: 520px;
+  height: 100%;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.drawerHeader {
+  padding: 24px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--color-bg);
+}
+
+.drawerTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.drawerSub {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.drawerBody {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Section Title inside Drawer */
+.sectionTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Timeline Components */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-left: 12px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -2px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-surface);
+}
+
+.timelineStatus {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.timelineMeta {
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+}
+
+/* Email Logs Inside Drawer */
+.emailList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emailCard {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.emailMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.emailSender {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.emailPreview {
+  font-size: 0.825rem;
+  color: var(--color-text-main);
+}
+
+.drawerFooter {
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  display: flex;
+  gap: 12px;
+}
+
+.pingButton {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-align: center;
+  transition: background-color var(--transition-fast);
+}
+
+.pingButton:hover {
+  background-color: var(--color-primary-hover);
+}

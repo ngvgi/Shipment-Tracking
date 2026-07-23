@@ -1,0 +1,40 @@
+:root {
+  /* Coffee & Espresso Palette */
+  --color-primary: #2c1810; /* Dark Espresso */
+  --color-primary-hover: #3d2318;
+  --color-accent: #c87d55; /* Roasted Coffee Accent */
+  --color-accent-light: #f4ece6; /* Cream Background Tint */
+
+  /* Neutral Surface & Slate Palette */
+  --color-bg: #faf9f6; /* Warm Off-White */
+  --color-surface: #ffffff;
+  --color-surface-hover: #f6f5f2;
+  --color-border: #e8e5df;
+  --color-text-main: #1c1917;
+  --color-text-muted: #78716c;
+  --color-text-inverse: #ffffff;
+
+  /* Status Colors */
+  --color-success: #15803d;
+  --color-success-bg: #dcfce7;
+  --color-warning: #b45309;
+  --color-warning-bg: #fef3c7;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fee2e2;
+  --color-info: #0369a1;
+  --color-info-bg: #e0f2fe;
+
+  /* Elevation & Borders */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}

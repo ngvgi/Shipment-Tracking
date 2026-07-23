@@ -1,0 +1,79 @@
+.header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.brandTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.brandSubtitle {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  display: block;
+  font-weight: 400;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  background-color: var(--color-bg);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.navButton {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.navButton:hover {
+  color: var(--color-text-main);
+}
+
+.active {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}

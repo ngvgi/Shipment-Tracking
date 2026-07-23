@@ -1,0 +1,35 @@
+src/
+├── app/
+│   ├── store.js                   # Redux store configuration
+│   └── hooks.js                   # Typed Redux hooks (useAppDispatch, useAppSelector)
+├── assets/
+│   └── icons/                     # SVG icons or UI assets (if needed)
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.jsx             # Top navigation bar & view toggler
+│   │   └── Navbar.module.css
+│   ├── overview/
+│   │   ├── KpiCard.jsx            # Reusable metric card widget
+│   │   ├── RegionBreakdown.jsx    # Visual regional performance breakdown
+│   │   ├── DelayedAlerts.jsx      # High-risk / attention-required feed
+│   │   └── Overview.module.css
+│   ├── shipments/
+│   │   ├── ShipmentTable.jsx      # Ledger showing all sample shipments
+│   │   ├── ShipmentFilter.jsx     # Search bar and status filter pills
+│   │   ├── ShipmentDetailModal.jsx# Drawer/Modal showing DHL timeline & email log
+│   │   └── Shipments.module.css
+│   └── ui/
+│       ├── Badge.jsx              # Status badges (Delivered, In Transit, Delayed)
+│       └── Badge.module.css
+├── features/
+│   └── shipments/
+│       ├── shipmentsSlice.js      # Redux slice for shipment data, filters, and selected item
+│       └── dummyData.js           # Realistic coffee sample tracking dataset
+├── pages/
+│   ├── OverviewPage.jsx           # Page 1: Logistics KPIs & Performance Overview
+│   └── ShipmentsPage.jsx          # Page 2: Interactive Sample Ledger & Tracking
+├── styles/
+│   ├── variables.css              # Theme tokens (espresso tones, slate, status colors)
+│   └── global.css                 # Base resets and global typography
+├── App.jsx                        # Main layout container & page switching logic
+└── main.jsx                       # Entry point with Redux Provider wrapper
