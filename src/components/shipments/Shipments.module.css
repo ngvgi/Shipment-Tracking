@@ -211,6 +211,48 @@
   gap: 28px;
 }
 
+/* Modal Internal Layout Utilities */
+.statusSummaryGrid {
+  display: flex;
+  gap: 12px;
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  display: block;
+}
+
+.sampleDetailsCard {
+  background-color: var(--color-bg);
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.sampleDetailsHeader {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.coffeeTitle {
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.coffeeMeta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.sectionTitleIcon {
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+}
+
 /* Section Title inside Drawer */
 .sectionTitle {
   font-size: 0.875rem;
@@ -501,7 +543,7 @@
 }
 
 /* ==========================================
-   📱 EXTRA NARROW SCREEN TWEAKS (< 325px)
+   📱 EXTRA NARROW SCREEN TWEAKS (< 425px)
    ========================================== */
 
 @media (max-width: 425px) {

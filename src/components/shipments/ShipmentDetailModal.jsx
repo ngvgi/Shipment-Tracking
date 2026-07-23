@@ -4,11 +4,18 @@ import {
   setSelectedShipmentId,
   sendManualPing,
 } from "../../features/shipments/shipmentsSlice";
+import { useTheme } from "../../context/ThemeContext";
 import Badge from "../ui/Badge";
 import styles from "./Shipments.module.css";
 
+import dhlLight from "../../assets/dhl-light.svg";
+import dhlDark from "../../assets/dhl-dark.svg";
+import emailLight from "../../assets/email-light.svg";
+import emailDark from "../../assets/email-dark.svg";
+
 export default function ShipmentDetailModal() {
   const dispatch = useAppDispatch();
+  const { theme } = useTheme();
   const selectedId = useAppSelector(
     (state) => state.shipments.selectedShipmentId,
   );
@@ -18,6 +25,11 @@ export default function ShipmentDetailModal() {
 
   const shipment = items.find((item) => item.id === selectedId);
   if (!shipment) return null;
+
+  // Dark background needs the bright icon (dhlLight)
+  // Light background needs the dark icon (dhlDark)
+  const dhlIcon = theme === "dark" ? dhlLight : dhlDark;
+  const emailIcon = theme === "dark" ? emailLight : emailDark;
 
   return (
     <div
@@ -42,56 +54,22 @@ export default function ShipmentDetailModal() {
 
         <div className={styles.drawerBody}>
           {/* Status summary */}
-          <div style={{ display: "flex", gap: "12px" }}>
+          <div className={styles.statusSummaryGrid}>
             <div>
-              <span
-                style={{
-                  fontSize: "0.75rem",
-                  color: "var(--color-text-muted)",
-                  display: "block",
-                }}
-              >
-                DHL Status
-              </span>
+              <span className={styles.fieldLabel}>DHL Status</span>
               <Badge status={shipment.dhlStatus} />
             </div>
             <div>
-              <span
-                style={{
-                  fontSize: "0.75rem",
-                  color: "var(--color-text-muted)",
-                  display: "block",
-                }}
-              >
-                Buyer Status
-              </span>
+              <span className={styles.fieldLabel}>Buyer Status</span>
               <Badge status={shipment.buyerStatus} />
             </div>
           </div>
 
           {/* Coffee specs */}
-          <div
-            style={{
-              background: "var(--color-bg)",
-              padding: "14px",
-              borderRadius: "var(--radius-sm)",
-              border: "1px solid var(--color-border)",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "0.75rem",
-                color: "var(--color-text-muted)",
-                textTransform: "uppercase",
-                fontWeight: 600,
-              }}
-            >
-              Sample Details
-            </span>
-            <p style={{ fontWeight: 600, marginTop: "2px" }}>
-              {shipment.coffeeType}
-            </p>
-            <p style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+          <div className={styles.sampleDetailsCard}>
+            <span className={styles.sampleDetailsHeader}>Sample Details</span>
+            <p className={styles.coffeeTitle}>{shipment.coffeeType}</p>
+            <p className={styles.coffeeMeta}>
               Weight: {shipment.weightKg} kg &bull; Dispatched:{" "}
               {shipment.dispatchDate}
             </p>
@@ -100,6 +78,11 @@ export default function ShipmentDetailModal() {
           {/* DHL Tracking Timeline */}
           <div>
             <h4 className={styles.sectionTitle}>
+              <img
+                src={dhlIcon}
+                alt="DHL Logo"
+                className={styles.sectionTitleIcon}
+              />
               DHL Express Tracking Timeline
             </h4>
             <div className={styles.timeline}>
@@ -117,7 +100,14 @@ export default function ShipmentDetailModal() {
 
           {/* Email activity log */}
           <div>
-            <h4 className={styles.sectionTitle}>Email Activity & Sync Logs</h4>
+            <h4 className={styles.sectionTitle}>
+              <img
+                src={emailIcon}
+                alt="Email Icon"
+                className={styles.sectionTitleIcon}
+              />
+              Email Activity & Sync Logs
+            </h4>
             <div className={styles.emailList}>
               {shipment.emailLogs.map((log, idx) => (
                 <div key={idx} className={styles.emailCard}>
