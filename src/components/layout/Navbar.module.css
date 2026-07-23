@@ -4,27 +4,55 @@
   position: sticky;
   top: 0;
   z-index: 50;
+  /* Generous vertical padding for a tall, breathable executive header */
+  padding: 20px 0;
+  /* Subtle box shadow to lift it cleanly off the background */
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.04);
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
-  height: 64px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.themeToggle:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-accent);
+}
+
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .logoIcon {
-  width: 32px;
-  height: 32px;
+  width: 40px; /* Slightly larger logo container for better proportion */
+  height: 40px;
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   border-radius: var(--radius-sm);
@@ -32,34 +60,35 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .brandTitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: -0.02em;
 }
 
 .brandSubtitle {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
   display: block;
   font-weight: 400;
+  margin-top: 2px;
 }
 
 .nav {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   background-color: var(--color-bg);
-  padding: 4px;
+  padding: 6px;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
 }
 
 .navButton {
-  padding: 8px 16px;
+  padding: 10px 20px; /* Increased pill padding for easier target clicks */
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
   font-weight: 500;
@@ -72,8 +101,12 @@
 }
 
 .active {
-  background-color: var(--color-surface);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
   font-weight: 600;
   box-shadow: var(--shadow-sm);
+}
+
+.active:hover {
+  color: var(--color-text-inverse);
 }
