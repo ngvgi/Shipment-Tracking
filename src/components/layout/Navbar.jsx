@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setActiveTab } from "../../features/shipments/shipmentsSlice";
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../context/ThemeContext";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
