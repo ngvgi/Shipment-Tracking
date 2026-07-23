@@ -8,9 +8,7 @@ export default function App() {
   const activeTab = useAppSelector((state) => state.shipments.activeTab);
 
   return (
-    <div
-      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
-    >
+    <div>
       <Navbar />
       <main style={{ flex: 1 }}>
         {activeTab === "overview" ? <OverviewPage /> : <ShipmentsPage />}
